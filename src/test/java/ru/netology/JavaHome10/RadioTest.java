@@ -42,8 +42,8 @@ public class RadioTest {
     }
     @Test
     public void IfMoreVolumeThanCan() {
-        radio.setVolume(11);
-        int expect = 10;
+        radio.setVolume(111);
+        int expect = 100;
         int actual = radio.getVolume();
         Assertions.assertEquals(expect, actual);
     }
