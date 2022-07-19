@@ -4,13 +4,17 @@ public class Radio {
     private int maxStationNumber = 9;
     private int minStationNumber = 0;
     private int stationNumber = minStationNumber;
+    private int minVolume = 0;
+    private int maxVolume = 100;
+    private int volume = minVolume;
 
     public Radio() {
 
     }
-    private int minVolume = 0;
-    private int maxVolume = 100;
-    private int volume = minVolume;
+
+    public Radio(int stationNumber) {
+        this.stationNumber = stationNumber;
+    }
 
     public int getStationNumber() {
         return stationNumber;
@@ -33,8 +37,9 @@ public class Radio {
         }
         stationNumber = newStationNumber;
     }
+
     public int nextStation() {
-       stationNumber = stationNumber + 1;
+        stationNumber = stationNumber + 1;
         if (stationNumber > maxStationNumber) {
             return minStationNumber;
         }

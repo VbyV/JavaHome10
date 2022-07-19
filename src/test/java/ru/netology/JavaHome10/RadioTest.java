@@ -68,4 +68,30 @@ public class RadioTest {
         int actual = radio.volumeMinusOne();
         Assertions.assertEquals(expect,actual);
     }
+    @Test
+    public void ChangeNumberOverStandartMax() {
+        Radio radio = new Radio(15);
+        radio.setStationNumber(11);
+       Assertions.assertEquals(15, radio.getStationNumber());
+    }
+    @Test
+    public void ReturnMaxStationNumber() {
+        Assertions.assertEquals(9, radio.getMaxStationNumber());
+    }
+    @Test
+    public void ReturnMinStationNumber() {
+        Assertions.assertEquals(0, radio.getMinStationNumber());
+    }
+    @Test
+    public void ReturnMaxVolume() {
+        Assertions.assertEquals(100, radio.getMaxVolume());
+    }
+    @Test
+    public void ReturnMinVolume() {
+        Assertions.assertEquals(0, radio.getMinVolume());
+    }
+    @Test
+    public void ReturnStandartVolume() {
+     Assertions.assertEquals(0, radio.getVolume());
+    }
 }
