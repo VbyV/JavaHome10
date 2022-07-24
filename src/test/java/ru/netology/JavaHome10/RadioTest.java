@@ -42,8 +42,8 @@ public class RadioTest {
     }
     @Test
     public void IfMoreVolumeThanCan() {
-        radio.setVolume(11);
-        int expect = 10;
+        radio.setVolume(111);
+        int expect = 100;
         int actual = radio.getVolume();
         Assertions.assertEquals(expect, actual);
     }
@@ -67,5 +67,31 @@ public class RadioTest {
         int expect = 7;
         int actual = radio.volumeMinusOne();
         Assertions.assertEquals(expect,actual);
+    }
+    @Test
+    public void ChangeNumberOverStandartMax() {
+        Radio radio = new Radio(20);
+        radio.setStationNumber(15);
+       Assertions.assertEquals(15, radio.getStationNumber());
+    }
+    @Test
+    public void ReturnMaxStationNumber() {
+        Assertions.assertEquals(9, radio.getMaxStationNumber());
+    }
+    @Test
+    public void ReturnMinStationNumber() {
+        Assertions.assertEquals(0, radio.getMinStationNumber());
+    }
+    @Test
+    public void ReturnMaxVolume() {
+        Assertions.assertEquals(100, radio.getMaxVolume());
+    }
+    @Test
+    public void ReturnMinVolume() {
+        Assertions.assertEquals(0, radio.getMinVolume());
+    }
+    @Test
+    public void ReturnStandartVolume() {
+     Assertions.assertEquals(0, radio.getVolume());
     }
 }
