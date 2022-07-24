@@ -70,8 +70,8 @@ public class RadioTest {
     }
     @Test
     public void ChangeNumberOverStandartMax() {
-        Radio radio = new Radio(15);
-        radio.setStationNumber(11);
+        Radio radio = new Radio(20);
+        radio.setStationNumber(15);
        Assertions.assertEquals(15, radio.getStationNumber());
     }
     @Test
